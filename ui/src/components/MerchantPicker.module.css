@@ -1,0 +1,126 @@
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* ── Header row ── */
+.pickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-2);
+  margin-bottom: var(--sp-1);
+}
+
+.count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 1px 7px;
+}
+
+/* ── Group section ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.groupLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-2) var(--sp-1);
+}
+
+.groupLine {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Each item ── */
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: 9px var(--sp-3);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  text-align: left;
+  transition: background var(--ease), border-color var(--ease);
+  cursor: pointer;
+}
+
+.item:hover {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+.active {
+  background: var(--primary-light) !important;
+  border-color: var(--primary-border) !important;
+}
+
+/* ── Avatar ── */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -0.2px;
+}
+
+/* ── Text ── */
+.itemText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.itemName {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.active .itemName {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.itemId {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+}
+
+/* ── Fraud badge ── */
+.fraudTag {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ── Active chevron ── */
+.activeChevron {
+  color: var(--primary);
+  flex-shrink: 0;
+}

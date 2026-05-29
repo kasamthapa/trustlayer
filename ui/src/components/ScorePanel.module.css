@@ -1,0 +1,259 @@
+/* ─── Panel ──────────────────────────────────────────────────────────────── */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.compact {
+  gap: var(--sp-4);
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-bottom: var(--sp-2);
+}
+
+/* ── Ring ── */
+.ringWrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.compact .ringWrap {
+  width: 140px;
+  height: 140px;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  /* start at top (12 o'clock) */
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.ringTrack {
+  fill: none;
+  stroke: var(--surface-2);
+  stroke-width: 9;
+}
+
+.ringTick {
+  stroke: var(--surface-3);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.ringFill {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;
+  stroke-dashoffset: 339.3; /* start empty */
+  transition: stroke-dashoffset 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* glow */
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* ── Score number centred ── */
+.ringCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  /* counter-rotate since ring SVG is rotated */
+}
+
+.scoreNum {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.compact .scoreNum {
+  font-size: 36px;
+}
+
+.scoreMax {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Band pill ── */
+.bandPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.bandDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Score caption ── */
+.scoreCaption {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+/* ─── Meta row ───────────────────────────────────────────────────────────── */
+.metaRow {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.metaCell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-4) var(--sp-4);
+  text-align: center;
+}
+
+.metaVal {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.metaDivider {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ─── Gate banner ────────────────────────────────────────────────────────── */
+.gate {
+  display: flex;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid;
+}
+
+.gateHard {
+  background: var(--band-low-bg);
+  border-color: var(--band-low-border);
+}
+
+.gateSoft {
+  background: var(--band-med-bg);
+  border-color: var(--band-med-border);
+}
+
+/* 4px left accent bar */
+.gateBar {
+  width: 4px;
+  flex-shrink: 0;
+}
+
+.gateBarHard { background: var(--band-low); }
+.gateBarSoft { background: var(--band-med); }
+
+.gateBody {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--sp-3) var(--sp-4);
+}
+
+.gateTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.gateReason {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  line-height: 1.4;
+}
+
+/* ─── Explanation ────────────────────────────────────────────────────────── */
+.explain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.chips {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+/* Each chip: left accent bar treatment */
+.chip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 10px var(--sp-4);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  color: var(--text-sub);
+  overflow: hidden;
+  position: relative;
+  transition: background var(--ease);
+}
+
+.chip:hover { background: var(--surface-3); }
+
+/* 3px left accent bar */
+.chipAccent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 2px 0 0 2px;
+}
+
+.chipSign {
+  font-size: 14px;
+  font-weight: 700;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .metaRow { flex-direction: column; }
+  .metaDivider { width: auto; height: 1px; }
+  .ringWrap { width: 170px; height: 170px; }
+  .scoreNum { font-size: 44px; }
+}
