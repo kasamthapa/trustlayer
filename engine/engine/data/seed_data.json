@@ -1,0 +1,21 @@
+{
+  "merchants": [
+    {"id": "M001", "name": "Saraswati (High Activity)", "score": 720},
+    {"id": "M002", "name": "Bardan (Cold Start)", "score": 350},
+    {"id": "T001", "name": "Bishal (Trust Anchor)", "score": 850},
+    {"id": "F001", "name": "Fraudster A", "score": 600},
+    {"id": "F002", "name": "Fraudster B", "score": 610},
+    {"id": "F003", "name": "Fraudster C", "score": 590},
+    {"id": "F004", "name": "Fraudster D", "score": 605},
+    {"id": "F005", "name": "Fraudster E", "score": 595}
+  ],
+  "vouches": [
+    {"source": "T001", "target": "M001", "weight": 1.0},
+    {"source": "M001", "target": "M002", "weight": 1.0},
+    {"source": "F001", "target": "F002", "weight": 1.0},
+    {"source": "F002", "target": "F003", "weight": 1.0},
+    {"source": "F003", "target": "F004", "weight": 1.0},
+    {"source": "F004", "target": "F005", "weight": 1.0},
+    {"source": "F005", "target": "F001", "weight": 1.0}
+  ]
+}
