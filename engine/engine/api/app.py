@@ -29,10 +29,10 @@ def create_app() -> FastAPI:
     
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=allowed_origins,
-        allow_credentials=True,
-        allow_methods=["POST", "GET", "OPTIONS"],
-        allow_headers=["Content-Type", "Authorization"],
+        allow_origins=["*"], 
+        allow_credentials=False,  # <--- CHANGED TO FALSE
+        allow_methods=["*"],      # <--- CHANGED TO "*" (allows everything)
+        allow_headers=["*"],      # <--- CHANGED TO "*" (allows everything)
     )
     
     @app.exception_handler(Exception)
